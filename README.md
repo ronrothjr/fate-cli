@@ -1,16 +1,34 @@
 # FATE CLI
 
-`Fate Condensed CLI` will cover the complete features of the Fate Condensed System.
-
-This Command Line Interface (CLI) allows users to:
-
-* Get help with condensed instructions.
-* Create characters, aspects (that you can treat as characters), stunts, stress, consequences, and conditions.
-* Roll fate dice with approach/skill bonuses while invoking/compelling any number of aspects (cannot invoke and compel in the same roll)
-* Create zones, scenes, and scenarios (all of which can be treated as characters and rolled with).
-* **COMING SOON** - Manage contests, challenges, and conflicts within zones, scenes, and scenarios.
-* **COMING SOON** - Record narrative elements to read back and view them within the context of their scenes.
-* **COMING SOON** - Return to a previous point in time to alter history on a new timeline
+        *   when using one or more stunts
+        *   when creating advantage
+        *   when defending
+        *   when active/full defense
+        *   when rolling a skill/approach
+        *   when assisting others
+        *   when conditions are added
+        *   when stress is absorbed
+        *   when specific aspects are invoked
+        *   when a stress track is exhausted
+        *   when scenario/session/scene start or end
+        *   when entering or exiting zone
+        *   when milestone is reached
+    *   stunt resolutions:
+        *   apply/remove stress
+        *   apply/remove consequences
+        *   apply/remove conditions
+        *   spend fate point(s)
+        *   add bonus to specific skill/approach roll
+        *   create specific aspect
+        *   create specific aspect w/ free invoke(s)
+        *   remove specific aspect
+    *   stunt limitations:
+        *   once/twice/thrice per zone/scene/session/scenario
+        *   requires avilable points on stress track
+        *   requires fate point(s)
+        *   requires specific action
+        *   requires specific skill
+        *   requires specific situation/circumstance
 
 # HELP COMMANDS
 
