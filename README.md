@@ -1,7 +1,6 @@
 # FATE CLI
 
 
-
 #### Fate CLI is a Discord bot that will cover the complete features of the Fate Condensed, FAE and Core Systems.
 
 **_Bold italics Indicates that the feature has not yet been implemented_**
@@ -12,7 +11,7 @@
 
 
 *   Get help with condensed game instructions.
-*   Commands for selecting, viewing, and editing all FATE game components.
+*   Run commands for selecting, viewing, and editing all FATE game components.
     *   Sessions, scenarios, scenes, and zones are confined to a channel.
     *   Characters are free to be used in any channel on the Discord server.
 *   Setup users for local timezone display of all dates.
@@ -31,7 +30,7 @@
 *   Manage contests, challenges, and conflicts within zones, scenes, sessions, and sessions.
     *   Start and end sessions and scenes.
     *   Enter and exit zones within scenes.
-    *   Connect zones to reach other.
+    *   Connect zones to each other.
     *   Add/move characters to zones and scenes.
     *   Display invokable/compellable aspects and stunts.
     *   Roll fate dice using character skills/approaches with invocation of aspects and stunts.
@@ -117,11 +116,30 @@
         *   requires specific action
         *   requires specific skill
         *   requires specific situation/circumstance
+
+
+## Technical Goals:
+
+
+
+*   Add comments and docstrings
+*   Update README with complete usage and developer setup instructions
+*   Replace timestamps with custom save hooks in mongoengineAdd setuptools files for easy install of dreacraft-bot for local development
+    *   [https://pypi.org/project/setuptools/](https://pypi.org/project/setuptools/)
+    *   [https://setuptools.readthedocs.io/en/latest/easy_install.html](https://setuptools.readthedocs.io/en/latest/easy_install.html)
+*   Research use of Cogs and how to apply to dreamcraft-bot:
+    *   [https://discordpy.readthedocs.io/en/latest/ext/commands/cogs.html#ext-commands-cogs](https://discordpy.readthedocs.io/en/latest/ext/commands/cogs.html#ext-commands-cogs)
+    *   [https://gist.github.com/EvieePy/d78c061a4798ae81be9825468fe146be](https://gist.github.com/EvieePy/d78c061a4798ae81be9825468fe146be)
+*   Research distutils to create dreamcraft-bot as a package:
+    *   [https://docs.python.org/3/distutils/introduction.html](https://docs.python.org/3/distutils/introduction.h
+
+
+
 # HELP COMMANDS
 
 `.d`
 
-### FATE CLI:
+### Dreamcraft Bot:
 * `.d` - display these instructions
 * `.d` cheat {search} - display condensed game instructions
 
@@ -177,9 +195,9 @@
 * `.d c (a)spect (c)character` - set the current aspect as the active character
 * `.d c (s)tunt [(d)elete] {stunt}` - add/remove stunts
 * `.d c (s)tunt (c)character` - set the current stunt as the active character
-* `.d c (app)roach [(d)elete] {approach} {bonus}` - add/remove approach bonuses
+* `.d c (app)roach [(d)elete] {(ap)proach} {bonus} [{(ap)proach} {bonus}...]` - add/remove approach bonuses
 * `.d c (app)roach help` - display a list of approach descriptions
-* `.d c (sk)ill [(d)elete] {skill} {bonus}` - set/remove bonuses
+* `.d c (sk)ill [(d)elete] {(sk)ill} {bonus} [{(sk)ill} {bonus}...]` - set/remove bonuses
 * `.d c (sk)ill help` - display a list of skill descriptions
 
 ### Stress Help:
@@ -467,3 +485,52 @@
         Takes place over a series of exchanges. Each character acts in turn order (as On Your Turn).
         Defenders roll to oppose. Conflict ends when one side concedes or is taken out.
         Players who concede each take a fate point. GM also pays players hostile invoke fate points.
+
+
+
+# DEVELOPER SETUP
+
+https://www.mongodb.com/download-center/community?tck=docs_server
+
+your settings.json file setup:
+https://github.com/microsoft/vscode-python/issues/9346
+
+Mongoengine info:
+http://mongoengine.org/
+
+Mongoengine Tutorial:
+http://docs.mongoengine.org/tutorial.html
+
+Mongoengine API Reference:
+http://docs.mongoengine.org/apireference.html
+
+Discord.py Docs:
+https://discordpy.readthedocs.io/en/latest/index.html
+
+Use “virtualenv”
+“virtualenv” is a 3rd-party python package that effectively “clones” a python installation, thereby creating an isolated location to install packages. The evolution of “virtualenv” started before the existence of the User installation scheme. “virtualenv” provides a version of easy_install that is scoped to the cloned python install and is used in the normal way. “virtualenv” does offer various features that the User installation scheme alone does not provide, e.g. the ability to hide the main python site-packages.
+
+Please refer to the virtualenv documentation for more details.
+Setting up your virtual environment:
+c:\>python -m venv c:\path\to\myenv
+c:\path\to\myenv\scripts\acitvate
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Dreamcraft Bot",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${workspaceFolder}/bot.py",
+            "console": "externalTerminal"
+        }
+    ]
+}
+
+Making a test Discord bot:
+https://realpython.com/how-to-make-a-discord-bot-python/
